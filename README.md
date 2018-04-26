@@ -14,7 +14,9 @@ Install NodeJS
 ### Installing
 
 Run npm install
+
 Run npm run
+
 Run node ./server/server.js
 
 
