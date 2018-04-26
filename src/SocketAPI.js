@@ -14,6 +14,18 @@ function ReceiveMsg(callback) {
     socket.on('new message', msg => callback(msg));
 }
 
+function subscribeToUsers(user){
+    socket.emit('new user',user);
+}
+
+function ReceiveUserName(callback){
+    socket.on('get users', users=> callback(users));
+}
+
+
+
 export { subscribeToTimer };
 export { subscribeToMsg};
 export { ReceiveMsg };
+export {subscribeToUsers};
+export {ReceiveUserName};

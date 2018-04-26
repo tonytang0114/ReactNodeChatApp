@@ -3,15 +3,17 @@ import AddRoom from './AddRoom';
 import RoomList from './RoomList';
 import ChatConsole from './ChatConsole';
 import ChatText from './ChatText';
-import { subscribeToTimer, subscribeToMsg, ReceiveMsg} from '../SocketAPI';
+import UserList from './UserList';
+import { subscribeToTimer, subscribeToMsg, ReceiveMsg,ReceiveUserName} from '../SocketAPI';
 
 class MainApp extends Component {
     constructor(props){
         super(props);
         this.state={
-            rooms:[{id:1, room:'sample'}],
+            rooms:[{id:1, room:'Main Room'}],
             texts:[],
-            timestamp:'no timestamp yet'
+            timestamp:'no timestamp yet',
+            users:[]
         };
 
         subscribeToTimer((err, timestamp) => this.setState({ 
@@ -20,6 +22,10 @@ class MainApp extends Component {
 
         ReceiveMsg((msg) => this.setState({
             texts: this.state.texts.concat(msg)
+        }));
+
+        ReceiveUserName((user)=> this.setState({
+            users: user
         }));
 
         this.RoomAdd=this.RoomAdd.bind(this);
@@ -66,10 +72,11 @@ class MainApp extends Component {
                 </div>
                 <AddRoom RoomAdd={term => this.RoomAdd(term)}/>
                 <RoomList rooms={this.state.rooms} RemoveRoom={room => this.RemoveRoom(room)}/>
-                {/* <UserList /> */}
+                
+                <UserList users={this.state.users}/>
             </div>
             <div className="Chat-Console">
-                <ChatConsole texts={this.state.texts} />
+                <ChatConsole texts={this.state.texts} name={this.props.name}/>
             </div>
             <div className="Chat-Text">
                 <ChatText AddText={text=>this.AddText(text)}/>

@@ -3,7 +3,7 @@ import Chatitem from './Chatitems';
 
 const ChatConsole = (props) => {
     const TextItems = props.texts.map((text,index)=>{
-    return <Chatitem key={index} text={text}/>
+    return <Chatitem key={index} text={text} name={props.name}/>
     });
 
     return (

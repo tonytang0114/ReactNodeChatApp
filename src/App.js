@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import MainApp from './Components/MainApp';
 import UserRegister from './Components/UserRegister';
+import {subscribeToUsers} from './SocketAPI';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Tony",
+      name: "",
       showMain: false
     };
   }
 
   SaveUser(data){
     this.setState({showMain: true});
+    this.setState({name:data});
+    subscribeToUsers(data);
+
   }
 
   render() {

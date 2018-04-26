@@ -24,7 +24,7 @@ class AddRoom extends Component {
         return (
             <div className="container">
                 <div className="row">
-                Room
+                <span id="userlist"><strong>RoomLists</strong></span>
                 </div>
                 <div className="row">
                     <div className="searchbar">
