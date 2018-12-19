@@ -74,12 +74,12 @@ button[type="submit"]{
   position:absolute;
   margin-left:25%;
   width:74%;
-  min-height:80%;
+  height: 520px;
   border-bottom:1px solid gray;
   border-top:1px solid gray;
   border-right:1px solid gray;
   float:right;
-  overflow-y:scroll;
+  overflow-y: scroll;
   -webkit-box-shadow: 6px 10px 25px -15px rgba(0,0,0,0.75);
   -moz-box-shadow: 6px 10px 25px -15px rgba(0,0,0,0.75);
   box-shadow: 6px 10px 25px -15px rgba(0,0,0,0.75);

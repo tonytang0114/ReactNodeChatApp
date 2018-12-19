@@ -75,9 +75,7 @@ class MainApp extends Component {
                 
                 <UserList users={this.state.users}/>
             </div>
-            <div className="Chat-Console">
-                <ChatConsole texts={this.state.texts} name={this.props.name}/>
-            </div>
+            <ChatConsole texts={this.state.texts} name={this.props.name}/>
             <div className="Chat-Text">
                 <ChatText AddText={text=>this.AddText(text)}/>
             </div>

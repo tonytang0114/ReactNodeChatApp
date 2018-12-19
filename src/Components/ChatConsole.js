@@ -7,7 +7,7 @@ const ChatConsole = (props) => {
     });
 
     return (
-        <div className="chat-console">
+        <div className="Chat-Console">
             <ul className="list-group">
                 {TextItems}
             </ul>
