@@ -12,8 +12,12 @@ Install NodeJS
 
 ### Demo
 Register page
+
+
 ![image](https://github.com/tonytang0114/ReactNodeChatApp/blob/master/image.png)
 Chat page
+
+
 ![image](https://github.com/tonytang0114/ReactNodeChatApp/blob/master/image2.png)
 
 ### Installing
